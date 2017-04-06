@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Successfully register a factory method store and retrieve it with argument 1`] = `
+Person {
+  "age": 54,
+  "name": "fredarg",
+}
+`;
+
+exports[`Successfully register a factory method store and retrieve it without argument 1`] = `
+Person {
+  "age": 54,
+  "name": "not-set",
+}
+`;

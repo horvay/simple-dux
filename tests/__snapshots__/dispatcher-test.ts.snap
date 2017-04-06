@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dispatch an event and retrieve it 1`] = `
+testEvent {
+  "event_type": "test event",
+  "test_data": "yo momma",
+}
+`;
+
+exports[`dispatch multiple events and cascade 1`] = `
+testEvent1 {
+  "event_type": "test event",
+  "test_data": "yo momma",
+}
+`;
+
+exports[`dispatch multiple events and cascade 2`] = `
+testEvent2 {
+  "event_type": "test event 2",
+  "name": "fred",
+}
+`;
