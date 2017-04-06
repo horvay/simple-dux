@@ -1,0 +1,29 @@
+{
+    "version": "0.1.0",
+    "command": "${workspaceRoot}/node_modules/.bin/webpack",
+    "isShellCommand": true,
+    "args": [
+        "--config=${workspaceRoot}/massUpdate/MassUpdate.webpack.config.js ",
+        // "--display-modules",
+        // "--progress",
+         "--display-error-details"
+    ],
+    "echoCommand": true,
+    "tasks": [
+        {
+            "args": [
+            ],
+            "suppressTaskName": true,
+            "taskName": "webpack dev",
+            "isBuildCommand": true
+        },
+        {
+            "args": [
+                "--optimize-minimize"
+            ],
+            "suppressTaskName": true,
+            "taskName": "webpack dist",
+            "isBuildCommand": false
+        }
+    ]
+}
