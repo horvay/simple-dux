@@ -1,14 +1,14 @@
 import SimpleDux from "../src/index";
 import { IPayload } from "../src/dispatcher";
 
-it('dispatch an event and retrieve it', () =>
+it("dispatch an event and retrieve it", () =>
 {
     let simple_dux = new SimpleDux();
     let dispatcher = simple_dux.Dispatcher;
 
-    class testEvent implements IPayload
+    class TestEvent implements IPayload
     {
-        event_type = "test event";
+        public event_type = "test event";
         public test_data = "";
 
         constructor(data: string)
@@ -17,22 +17,22 @@ it('dispatch an event and retrieve it', () =>
         }
     }
 
-    dispatcher.addCallback("test event", (event: testEvent) =>
+    dispatcher.addCallback("test event", (event: TestEvent) =>
     {
         expect(event).toMatchSnapshot();
     });
 
-    dispatcher.injectEvent(new testEvent("yo momma"));
+    dispatcher.injectEvent(new TestEvent("yo momma"));
 });
 
-it('dispatch multiple events and cascade', () =>
+it("dispatch multiple events and cascade", () =>
 {
     let simple_dux = new SimpleDux();
     let dispatcher = simple_dux.Dispatcher;
 
-    class testEvent1 implements IPayload
+    class TestEvent1 implements IPayload
     {
-        event_type = "test event";
+        public event_type = "test event";
         public test_data = "";
 
         constructor(data: string)
@@ -41,9 +41,9 @@ it('dispatch multiple events and cascade', () =>
         }
     }
 
-    class testEvent2 implements IPayload
+    class TestEvent2 implements IPayload
     {
-        event_type = "test event 2";
+        public event_type = "test event 2";
         public name = "no name";
 
         constructor(name: string)
@@ -52,17 +52,17 @@ it('dispatch multiple events and cascade', () =>
         }
     }
 
-    dispatcher.addCallback("test event 2", (event: testEvent2) =>
+    dispatcher.addCallback("test event 2", (event: TestEvent2) =>
     {
         expect(event).toMatchSnapshot();
     })
 
-    dispatcher.addCallback("test event", (event: testEvent1) =>
+    dispatcher.addCallback("test event", (event: TestEvent1) =>
     {
         expect(event).toMatchSnapshot();
 
-        dispatcher.injectEvent(new testEvent2("fred"));
+        dispatcher.injectEvent(new TestEvent2("fred"));
     });
 
-    dispatcher.injectEvent(new testEvent1("yo momma"));
+    dispatcher.injectEvent(new TestEvent1("yo momma"));
 });

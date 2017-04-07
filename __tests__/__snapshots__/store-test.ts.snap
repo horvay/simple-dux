@@ -4,6 +4,7 @@ exports[`Successfully register a factory method store and retrieve it with argum
 Person {
   "age": 54,
   "name": "fredarg",
+  "yourmother": true,
 }
 `;
 

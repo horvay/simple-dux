@@ -40,7 +40,7 @@ export default class SimpleStore
      */
     public GetScopedStore<T>(name: string, ...args: any[])
     {
-        let factory_method = this._scoped_storage[name];
+        const factory_method = this._scoped_storage[name];
         if (!factory_method)
         {
             throw `factory method called ${name} is not defined`;

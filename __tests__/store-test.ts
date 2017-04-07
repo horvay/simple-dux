@@ -1,6 +1,6 @@
 import SimpleDux from "../src/index";
 
-it('Successfully register a persistent store and retrieve it', () =>
+it("Successfully register a persistent store and retrieve it", () =>
 {
     let simple_dux = new SimpleDux();
     let store = simple_dux.Store;
@@ -18,7 +18,7 @@ it('Successfully register a persistent store and retrieve it', () =>
     expect(greg2).toEqual(greg);
 });
 
-it('Successfully register a factory method store and retrieve it with argument', () =>
+it("Successfully register a factory method store and retrieve it with argument", () =>
 {
     let simple_dux = new SimpleDux();
     let store = simple_dux.Store;
@@ -27,6 +27,7 @@ it('Successfully register a factory method store and retrieve it with argument',
     {
         public name = "not-set";
         public age = 54;
+        public yourmother = true;
 
         constructor(name: string)
         {
@@ -43,7 +44,7 @@ it('Successfully register a factory method store and retrieve it with argument',
     expect(greg).toMatchSnapshot();
 });
 
-it('Successfully register a factory method store and retrieve it without argument', () =>
+it("Successfully register a factory method store and retrieve it without argument", () =>
 {
     let simple_dux = new SimpleDux();
     let store = simple_dux.Store;

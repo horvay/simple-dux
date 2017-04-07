@@ -1,5 +1,5 @@
-type EventType = string;
-type EventCallback = (payload: IPayload) => void;
+export type EventType = string;
+export type EventCallback = (payload: IPayload) => void;
 
 export interface IPayload
 {
@@ -28,7 +28,7 @@ export default class Dispatcher
       */
     public injectEvent(payload: IPayload)
     {
-        let callbacks_for_event = this.callbacks[payload.event_type];
+        const callbacks_for_event = this.callbacks[payload.event_type];
 
         if (callbacks_for_event)
         {
