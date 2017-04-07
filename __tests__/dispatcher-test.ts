@@ -55,7 +55,7 @@ it("dispatch multiple events and cascade", () =>
     dispatcher.addCallback("test event 2", (event: TestEvent2) =>
     {
         expect(event).toMatchSnapshot();
-    })
+    });
 
     dispatcher.addCallback("test event", (event: TestEvent1) =>
     {
