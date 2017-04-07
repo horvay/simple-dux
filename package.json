@@ -1,8 +1,9 @@
 {
     "name": "simple-dux",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "description": "Simple version of a basic flux type library written in Typescript",
-    "main": "lib/library.js",
+    "main": "lib/simple-dux.min.js",
+    "types": "lib/simple-dux.d.ts",
     "scripts": {
         "build": "webpack --env build",
         "dev": "webpack --progress --colors --watch --env dev",
@@ -20,7 +21,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/krasimir/webpack-library-starter.git"
+        "url": "https://github.com/horvay/simple-dux"
     },
     "keywords": [
         "flux",

@@ -1,0 +1,26 @@
+{
+    "name": "simple-dux-example",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "author": "Greg Horvay",
+    "license": "MIT",
+    "scripts": {
+        "build": "webpack --env build",
+        "dev": "webpack --progress --colors --watch --env dev"
+    },
+    "dependencies": {
+        "@types/react": "^15.0.21",
+        "@types/react-dom": "^0.14.23",
+        "react": "^15.4.2",
+        "react-dom": "^15.4.2",
+        "simple-dux": "^1.0.3",
+        "webpack": "^2.2.1",
+        "source-map-loader": "^0.1.6",
+        "ts-loader": "^2.0.3"
+    },
+    "devDependencies": {
+        "tslint": "^4.5.1",
+        "typescript": "^2.2.2"
+    }
+}
