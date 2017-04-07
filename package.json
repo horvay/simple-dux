@@ -1,6 +1,6 @@
 {
     "name": "simple-dux",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Simple version of a basic flux type library written in Typescript",
     "main": "lib/library.js",
     "scripts": {
