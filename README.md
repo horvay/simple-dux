@@ -1,7 +1,7 @@
 # **simple-dux**
 I wrote this library because redux/flux/mobx was too complex for some simple projects I was working on. I needed something that did basic Inversion of Control and be able to dispatch events.
 
-There are two concepts in simple-dux. You have the Dispatcher to inject events and register callbacks for said events.
+There are two concepts in simple-dux. You have the Dispatcher to inject events and register callbacks for said events, and a Store for holding and persisting storage.
 
 You can put them in a seperate files like this. In the example, I put them in a ts file called simpledux.ts
 ```ts
