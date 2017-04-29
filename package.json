@@ -1,53 +1,54 @@
 {
-    "name": "simple-dux",
-    "version": "1.1.0",
-    "description": "Simple version of a basic flux type library written in Typescript",
-    "main": "lib/simple-dux.min.js",
-    "types": "lib/simple-dux.d.ts",
-    "scripts": {
-        "build": "webpack --env build",
-        "dev": "webpack --progress --colors --watch --env dev",
-        "test": "jest"
-    },
-    "devDependencies": {
-        "@types/jest": "*",
-        "jest": "*",
-        "ts-jest": "^19.0.8",
-        "ts-loader": "^2.0.3",
-        "tslint": "*",
-        "typescript": "^2.2.2",
-        "webpack": "^2.3.3",
-        "yargs": "6.6.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/horvay/simple-dux"
-    },
-    "keywords": [
-        "flux",
-        "redux",
-        "one-way-binding",
-        "library",
-        "universal",
-        "umd",
-        "typescript",
-        "commonjs"
+  "name": "simple-dux",
+  "version": "1.2.0",
+  "description": "Simple version of a basic flux type library written in Typescript",
+  "main": "lib/simple-dux.min.js",
+  "types": "lib/simple-dux.d.ts",
+  "scripts": {
+    "build": "webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "*",
+    "jest": "*",
+    "jest-cli": "^19.0.2",
+    "ts-jest": "^19.0.8",
+    "ts-loader": "^2.0.3",
+    "tslint": "*",
+    "typescript": "^2.2.2",
+    "webpack": "^2.3.3",
+    "yargs": "6.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/horvay/simple-dux"
+  },
+  "keywords": [
+    "flux",
+    "redux",
+    "one-way-binding",
+    "library",
+    "universal",
+    "umd",
+    "typescript",
+    "commonjs"
+  ],
+  "author": "Horvay, Greg",
+  "license": "MIT",
+  "bugs": {
+    "url": "update me"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
     ],
-    "author": "Horvay, Greg",
-    "license": "MIT",
-    "bugs": {
-        "url": "update me"
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "jest": {
-        "moduleFileExtensions": [
-            "ts",
-            "tsx",
-            "js"
-        ],
-        "transform": {
-            ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-        },
-        "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-        "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js"
-    }
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js"
+  }
 }

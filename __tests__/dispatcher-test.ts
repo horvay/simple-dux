@@ -66,3 +66,37 @@ it("dispatch multiple events and cascade", () =>
 
     dispatcher.injectEvent(new TestEvent1("yo momma"));
 });
+
+it("hits callback on all namespace callbacks", () =>
+{
+    let simple_dux = new SimpleDux();
+    let dispatcher = simple_dux.Dispatcher;
+
+    class TestEvent1 implements IPayload
+    {
+        public event_type = "test event";
+        public test_data = "";
+
+        constructor(data: string)
+        {
+            this.test_data = data;
+        }
+    }
+
+    let count = 0;
+
+    dispatcher.addNamespaceCallback("test events", (event: IPayload) =>
+    {
+        count++;
+        expect(event).toMatchSnapshot();
+    });
+
+    dispatcher.addNamespaceCallback("test events", (event: IPayload) =>
+    {
+        count++;
+        expect(event).toMatchSnapshot();
+    });
+
+    dispatcher.injectEvent(new TestEvent1("yo momma"), "test events");
+    expect(count).toBe(2);
+});

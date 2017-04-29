@@ -20,3 +20,17 @@ TestEvent2 {
   "name": "fred",
 }
 `;
+
+exports[`hits callback on all namespace callbacks 1`] = `
+TestEvent1 {
+  "event_type": "test event",
+  "test_data": "yo momma",
+}
+`;
+
+exports[`hits callback on all namespace callbacks 2`] = `
+TestEvent1 {
+  "event_type": "test event",
+  "test_data": "yo momma",
+}
+`;
