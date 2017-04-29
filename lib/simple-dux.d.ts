@@ -7,17 +7,15 @@ declare module 'simple-dux/dispatcher' {
     }
     export default class Dispatcher
     {
-        private callbacks;
         addCallback(event_type: EventType, callback: EventCallback): void;
-        injectEvent(payload: IPayload): void;
+        addNamespaceCallback(namespace: string, callback: EventCallback): void;
+        injectEvent(payload: IPayload, namespace?: string): void;
     }
 
 }
 declare module 'simple-dux/store' {
     export default class SimpleStore
     {
-        private _persist_storage;
-        private _scoped_storage;
         RegisterPersistentStore<T>(store: T, name: string): void;
         GetPersistentStore<T>(name: string): T;
         RegisterScopedStore<T>(factory_method: (...args) => T, name: string): void;
