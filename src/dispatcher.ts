@@ -56,4 +56,14 @@ export default class Dispatcher
             callbacks_for_event.forEach(c => c(payload));
         }
     }
+
+    public removeNamespaceCallback(namespace: string)
+    {
+        delete this.namespace_callbacks[namespace];
+    }
+
+    public removeCallback(event_type: EventType)
+    {
+        delete this.callbacks[event_type];
+    }
 }

@@ -1,20 +1,22 @@
 declare module 'simple-dux/dispatcher' {
-    export type EventType = string;
-    export type EventCallback = (payload: IPayload) => void;
-    export interface IPayload
+    type EventType = string;
+    type EventCallback = (payload: IPayload) => void;
+    interface IPayload
     {
         event_type: EventType;
     }
-    export default class Dispatcher
+    class Dispatcher
     {
         addCallback(event_type: EventType, callback: EventCallback): void;
         addNamespaceCallback(namespace: string, callback: EventCallback): void;
         injectEvent(payload: IPayload, namespace?: string): void;
+        removeNamespaceCallback(namespace: string): void;
+        removeCallback(event_type: EventType): void;
     }
 
 }
 declare module 'simple-dux/store' {
-    export default class SimpleStore
+    class SimpleStore
     {
         RegisterPersistentStore<T>(store: T, name: string): void;
         GetPersistentStore<T>(name: string): T;
@@ -24,12 +26,12 @@ declare module 'simple-dux/store' {
 
 }
 declare module 'simple-dux' {
-    import Dispatcher from 'simple-dux/dispatcher';
-    import SimpleStore from 'simple-dux/store';
+    import { Dispatcher } from 'simple-dux/dispatcher';
+    export { IPayload, EventCallback, EventType } from 'simple-dux/dispatcher';
+    import { SimpleStore } from 'simple-dux/store';
     export default class SimpleDux
     {
         Dispatcher: Dispatcher;
         Store: SimpleStore;
     }
-
 }
