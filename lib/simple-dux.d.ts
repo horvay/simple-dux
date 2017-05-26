@@ -10,8 +10,8 @@ declare module 'simple-dux/dispatcher' {
         addCallback(event_type: EventType, callback: EventCallback): void;
         addNamespaceCallback(namespace: string, callback: EventCallback): void;
         injectEvent(payload: IPayload, namespace?: string): void;
-        removeNamespaceCallback(namespace: string): void;
-        removeCallback(event_type: EventType): void;
+        removeNamespaceCallback(namespace: string, callback: EventCallback): void;
+        removeCallback(event_type: EventType, callback: EventCallback): void;
     }
 
 }

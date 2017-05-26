@@ -57,13 +57,29 @@ export default class Dispatcher
         }
     }
 
-    public removeNamespaceCallback(namespace: string)
+    public removeNamespaceCallback(namespace: string, callback: EventCallback)
     {
-        delete this.namespace_callbacks[namespace];
+        let ns_array = this.namespace_callbacks[namespace];
+        for (let i = 0; i < ns_array.length; i++)
+        {
+            if (ns_array[i] === callback)
+            {
+                this.namespace_callbacks[namespace].splice(i, 1);
+                return;
+            }
+        }
     }
 
-    public removeCallback(event_type: EventType)
+    public removeCallback(event_type: EventType, callback: EventCallback)
     {
-        delete this.callbacks[event_type];
+        let cb_array = this.callbacks[event_type];
+        for (let i= 0; i < cb_array.length; i++)
+        {
+            if (cb_array[i] === callback)
+            {
+                this.callbacks[event_type].splice(i, 1);
+                return;
+            }
+        }
     }
 }
