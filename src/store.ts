@@ -63,7 +63,7 @@ export default class SimpleStore
      * * Deregisters an entry in the scoped store
      * @param name the name to deregister.
      */
-    public DeregisterScopedStore<T>( name: string): void
+    public DeregisterScopedStore<T>(name: string): void
     {
         delete this._scoped_storage[name];
     }

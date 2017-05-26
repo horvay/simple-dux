@@ -23,7 +23,7 @@ declare module 'simple-dux/store' {
         DeregisterPersistentStore<T>(name: string): void;
         RegisterScopedStore<T>(factory_method: (...args) => T, name: string): void;
         GetScopedStore<T>(name: string, ...args: any[]): T;
-        DeregisterScopedStore<T>( name: string): void;
+        DeregisterScopedStore<T>(name: string): void;
     }
 
 }
