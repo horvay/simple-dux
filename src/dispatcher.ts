@@ -73,7 +73,7 @@ export default class Dispatcher
     public removeCallback(event_type: EventType, callback: EventCallback)
     {
         let cb_array = this.callbacks[event_type];
-        for (let i= 0; i < cb_array.length; i++)
+        for (let i = 0; i < cb_array.length; i++)
         {
             if (cb_array[i] === callback)
             {
